@@ -165,30 +165,13 @@ endif::asciidoc-vars-nut-included[]
 Description
 -----------
 
-Network UPS Tools is a collection of programs which provide a common
-interface for monitoring and administering UPS, PDU and SCD hardware.
-It uses a layered approach to connect all of the parts.
+Network UPS Tools - это набор программ, предоставляющих общий интерфейс для мониторинга и администрирования оборудования ИБП, PDU и SCD.
 
-Drivers are provided for a wide assortment of equipment.  They
-understand the specific language of each device and map it back to a
-compatibility layer.  This means both an expensive high end UPS, a simple
-"power strip" PDU, or any other power device can be handled transparently
-with a uniform management interface.
+В нем используется многоуровневый подход для соединения всех частей. Драйверы предоставляются для широкого спектра оборудования. Они понимают специфический язык каждого устройства и отображают его на уровень совместимости. Это означает, что и дорогой ИБП высокого класса, и простой PDU "power strip", и любое другое устройство питания могут работать прозрачно с единым интерфейсом управления. Эта информация кэшируется сетевым сервером upsd, который затем отвечает на запросы клиентов.
 
-This information is cached by the network server `upsd`, which then
-answers queries from the clients.  upsd contains a number of access
-control features to limit the abilities of the clients.  Only authorized
-hosts may monitor or control your hardware if you wish.  Since the
-notion of monitoring over the network is built into the software, you
-can hang many systems off one large UPS, and they will all shut down
-together. You can also use NUT to power on, off or cycle your data center
-nodes, individually or globally through PDU outlets.
+upsd содержит ряд функций контроля доступа, чтобы ограничить возможности клиентов. Только авторизованные узлы могут следить за вашим оборудованием или управлять им по вашему желанию. Поскольку концепция мониторинга по сети встроена в программное обеспечение, вы можете повесить множество систем на один большой ИБП, и все они будут отключаться вместе. 
 
-Clients such as `upsmon` check on the status of the hardware and do things
-when necessary.  The most important task is shutting down the operating
-system cleanly before the UPS runs out of power.  Other programs are
-also provided to log information regularly, monitor status through your
-web browser, and more.
+Вы также можете использовать NUT для включения, выключения или циклического отключения питания узлов центра обработки данных, индивидуально или глобально через розетки PDU. Такие клиенты, как upsmon, проверяют состояние оборудования и выполняют необходимые действия. Наиболее важной задачей является чистое завершение работы операционной системы до того, как ИБП разрядится. Также предусмотрены другие программы для регулярной регистрации информации, мониторинга состояния через веб-браузер и т. д.
 
 
 NUT and the ecosystem
